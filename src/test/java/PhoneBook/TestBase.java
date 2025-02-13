@@ -19,27 +19,29 @@ public class TestBase {
 
     @BeforeSuite
     public void beforeSuite() {
-        app.init();
+       // app.init();
     }
 
     @BeforeMethod
     public void setUp(Method method) {
         logger.info("Test is started: [" + method.getName() + "]");
-        //app.init();
+        app.init();
     }
 
     @AfterMethod
     public void tearDown(Method method, ITestResult result) {
-        //app.stop();
+
         if (result.isSuccess()) {
             logger.info("Test is PASSED: [" + method.getName() + "]");
         } else {
             logger.error("Test is FAILED: [" + method.getName() + "], Screenshot: [" + app.getUserHelper().takeScreenshot() + "]");
         }
+        app.stop();
+
     }
 
     @AfterSuite(enabled = true)
     public void afterSuite() {
-        app.stop();
+       // app.stop();
     }
 }

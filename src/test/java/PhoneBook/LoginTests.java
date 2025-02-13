@@ -15,12 +15,12 @@ public class LoginTests extends TestBase {
 
     @BeforeMethod
     public void preCondition() {
-        if (app.getUserHelper().isSignOutButtonPresent()) {
-            logger.info("User already logged in. Sign out...");
-            app.getUserHelper().clickOnSignOutButton();
-        } else {
-            logger.info("LOGIN link is present. No need to Sign Out");
-        }
+//        if (app.getUserHelper().isSignOutButtonPresent()) {
+//            logger.info("User already logged in. Sign out...");
+//            app.getUserHelper().clickOnSignOutButton();
+//        } else {
+//            logger.info("LOGIN link is present. No need to Sign Out");
+//        }
     }
 
     @Test(invocationCount = 1)
